@@ -42,14 +42,14 @@ class local_rsync_external extends external_api {
      */
     public static function create_file_resource_parameters() {
         return new external_function_parameters(
-            array('filename' => new external_value(PARAM_TEXT, 'A file in a user\'s \'private files\', ' .
+            ['filename' => new external_value(PARAM_TEXT, 'A file in a user\'s \'private files\', ' .
                   'default in / when no filepath provided', VALUE_REQUIRED),
                   'filepath' => new external_value(PARAM_TEXT, 'A path to a file in a user\'s \'private files\'', VALUE_DEFAULT,
                       '/'),
                   'courseid' => new external_value(PARAM_INT, 'The course id the file is to be handeled in', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the file is to be added', VALUE_REQUIRED),
-                  'displayname' => new external_value(PARAM_TEXT, 'The name to display for the file', VALUE_DEFAULT, '')
-            )
+                  'displayname' => new external_value(PARAM_TEXT, 'The name to display for the file', VALUE_DEFAULT, ''),
+            ]
         );
     }
 
@@ -69,11 +69,11 @@ class local_rsync_external extends external_api {
         // Parameter validation.
         // REQUIRED.
         $params = self::validate_parameters(self::create_file_resource_parameters(),
-            array('filename' => $filename,
+            ['filename' => $filename,
                 'filepath' => $filepath,
                 'courseid' => $courseid,
                 'sectionnumber' => $sectionnumber,
-                'displayname' => $displayname));
+                'displayname' => $displayname, ]);
 
         // For sure: action.
         // Maybe: alias display intro printintro popupwidth popupheight showsize showtype showdate.
@@ -133,7 +133,7 @@ class local_rsync_external extends external_api {
                 $data->files = $tempfile->get_itemid();
                 $data->visible = 1;
                 $data->visibleoncoursepage = 1;
-                $data->introeditor = array('text' => '', 'format' => 1, 'itemid' => null);
+                $data->introeditor = ['text' => '', 'format' => 1, 'itemid' => null];
                 $data->course = $courseid;
                 $data->section = $sectionnumber;
                 $mod = $DB->get_record('modules', ['name' => 'resource']);
@@ -165,8 +165,8 @@ class local_rsync_external extends external_api {
                 if ($file = $fs->get_file($context->id, 'user', 'draft', $tempfile->get_itemid(), '/', $futurefilename)) {
                     $file->delete();
                 }
-                return get_string('successmessage_file_upload', 'local_rsync', array('file' => $displayname,
-                    'courseid' => $courseid, 'coursesection' => $sectionnumber, 'username' => fullname($USER)));
+                return get_string('successmessage_file_upload', 'local_rsync', ['file' => $displayname,
+                    'courseid' => $courseid, 'coursesection' => $sectionnumber, 'username' => fullname($USER), ]);
             }
         }
         throw new moodle_exception('filenotfound');

@@ -26,25 +26,22 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['errormessage_section_file_visibility'] = 'An error occured while changing visiblity of file with the name {$a->filename} in section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
+$string['errormessage_section_rename'] = 'An error occured while removing section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
 $string['pluginname'] = 'rsync web service';
 $string['rsync:managefiles'] = 'Manage courses using the rsync web service';
+$string['successmessage_copy_all_section_modules'] = 'Successfully copied all modules from section with the number {$a->sectionnumber} to the section with the number {$a->targetsectionnumber} in the course with the id {$a->courseid} by the user {$a->username}';
+$string['successmessage_copy_module'] = 'Successfully copied module {$a->modulename} from section {$a->section} to section {$a->targetsection} in the course with the id {$a->courseid}by the user {$a->username}';
+$string['successmessage_course_copy'] = 'Successfully copied the course with the id {$a->courseid} to the course with the id {$a->newcourseid} by user {$a->username}.';
+$string['successmessage_course_visibility'] = 'Successfully {$a->visibility} course with the id {$a->courseid} by user {$a->username}.';
+$string['successmessage_create_section'] = 'Successfully created section named {$a->sectionname} with the number {$a->sectionnumber} in the course with the id {$a->courseid} by the user {$a->username}';
 $string['successmessage_file_upload'] = 'Added file {$a->file} to course id {$a->courseid} in section {$a->coursesection} by user {$a->username}.';
-
-$string['successmessage_section_visibility'] = 'Successfully {$a->visibility} section {$a->sectionnumber} in course with the id {$a->courseid} by user {$a->username}.';
+$string['successmessage_remove_all_sections'] = 'Successfully removed all sections from the course with the id {$a->courseid} by user {$a->username}.';
+$string['successmessage_section_all_module_movement'] = 'Successfully moved all modules from section with the id {$a->sectionid} to the section with the id {$a->targetsectionid} in the course with the id {$a->courseid} by user {$a->username}.';
+$string['successmessage_section_file_removal'] = 'Successfully removed all files from the section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
+$string['successmessage_section_file_visibility'] = 'Successfully {$a->visibility} file with the name {$a->filename} in section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
+$string['successmessage_section_module_movement'] = 'Successfully moved module with the name {$a->modulename} from section with the id {$a->sectionid} to the section with the id {$a->targetsectionid} in the course with the id {$a->courseid} by user {$a->username}.';
+$string['successmessage_section_remove'] = 'Successfully removed section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
 $string['successmessage_section_remove_file'] = 'Successfully removed file {$a->filename} in section {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
 $string['successmessage_section_rename'] = 'Successfully renamed section with the id {$a->sectionnumber} to {$a->newsectionname} in the course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_section_remove'] = 'Successfully removed section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_section_file_visibility'] = 'Successfully {$a->visibility} file with the name {$a->filename} in section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_section_file_removal'] = 'Successfully removed all files from the section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_section_module_movement'] = 'Successfully moved module with the name {$a->modulename} from section with the id {$a->sectionid} to the section with the id {$a->targetsectionid} in the course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_section_all_module_movement'] = 'Successfully moved all modules from section with the id {$a->sectionid} to the section with the id {$a->targetsectionid} in the course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_remove_all_sections'] = 'Successfully removed all sections from the course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_copy_module'] = 'Successfully copied module {$a->modulename} from section {$a->section} to section {$a->targetsection} in the course with the id {$a->courseid}by the user {$a->username}';
-$string['successmessage_create_section'] = 'Successfully created section named {$a->sectionname} with the number {$a->sectionnumber} in the course with the id {$a->courseid} by the user {$a->username}';
-$string['successmessage_copy_all_section_modules'] = 'Successfully copied all modules from section with the number {$a->sectionnumber} to the section with the number {$a->targetsectionnumber} in the course with the id {$a->courseid} by the user {$a->username}';
-
-$string['errormessage_section_rename'] = 'An error occured while removing section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
-$string['errormessage_section_file_visibility'] = 'An error occured while changing visiblity of file with the name {$a->filename} in section with the id {$a->sectionnumber} in the course with the id {$a->courseid} by user {$a->username}.';
-
-$string['successmessage_course_visibility'] = 'Successfully {$a->visibility} course with the id {$a->courseid} by user {$a->username}.';
-$string['successmessage_course_copy'] = 'Successfully copied the course with the id {$a->courseid} to the course with the id {$a->newcourseid} by user {$a->username}.';
+$string['successmessage_section_visibility'] = 'Successfully {$a->visibility} section {$a->sectionnumber} in course with the id {$a->courseid} by user {$a->username}.';

@@ -26,125 +26,125 @@
 defined('MOODLE_INTERNAL') || die();
 
 // We defined the web service functions to install.
-$functions = array(
-    'local_rsync_create_file_resource' => array(
+$functions = [
+    'local_rsync_create_file_resource' => [
         'classname'   => 'local_rsync_external',
         'methodname'  => 'create_file_resource',
         'classpath'   => 'local/rsync/externallib.php',
         'description' => 'Allows you to create file resources in sections of a Moodle course with files in the \'Private files\' ' .
                          'area, and other things, too',
         'type'        => 'write',
-    ),
-    'local_rsync_set_section_visibility' => array(
+    ],
+    'local_rsync_set_section_visibility' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'set_section_visibilty',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to hide and unhide sections',
         'type'        => 'write',
-    ),
-    'local_rsync_remove_file_from_section' => array(
+    ],
+    'local_rsync_remove_file_from_section' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'remove_file_from_section',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to remove a file from a section',
         'type'        => 'write',
-    ),
-    'local_rsync_rename_section' => array(
+    ],
+    'local_rsync_rename_section' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'rename_section',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to rename a section',
         'type'        => 'write',
-    ),
-    'local_rsync_remove_section' => array(
+    ],
+    'local_rsync_remove_section' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'remove_section',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to remove a section',
         'type'        => 'write',
-    ),
-    'local_rsync_set_file_visibility' => array(
+    ],
+    'local_rsync_set_file_visibility' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'set_file_visibility',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to set the visibility of a single file',
         'type'        => 'write',
-    ),
-    'local_rsync_remove_all_files_from_section' => array(
+    ],
+    'local_rsync_remove_all_files_from_section' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'remove_all_files_from_section',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to remove all files in a section',
         'type'        => 'write',
-    ),
-    'local_rsync_move_file_to_other_section' => array(
+    ],
+    'local_rsync_move_file_to_other_section' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'move_file_to_other_section',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to move a module from one section to another',
         'type'        => 'write',
-    ),
-    'local_rsync_move_all_modules_to_other_section' => array(
+    ],
+    'local_rsync_move_all_modules_to_other_section' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'move_all_modules_to_other_section',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to move all modules from one section to another',
         'type'        => 'write',
-    ),
-    'local_rsync_remove_all_sections' => array(
+    ],
+    'local_rsync_remove_all_sections' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'remove_all_sections',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to remove all sections from the course',
         'type'        => 'write',
-    ),
-    'local_rsync_copy_module' => array(
+    ],
+    'local_rsync_copy_module' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'copy_module',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to copy a module',
         'type'        => 'write',
-    ),
-    'local_rsync_create_section' => array(
+    ],
+    'local_rsync_create_section' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'create_section',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to create a section',
         'type'        => 'write',
-    ),
-    'local_rsync_copy_all_section_modules' => array(
+    ],
+    'local_rsync_copy_all_section_modules' => [
         'classname'   => 'local_rsync_section',
         'methodname'  => 'copy_all_section_modules',
         'classpath'   => 'local/rsync/section.php',
         'description' => 'Allows you to copy all modules in section and place it in an other section (or the same)',
         'type'        => 'write',
-    ),
-    'local_rsync_change_course_visibility' => array(
+    ],
+    'local_rsync_change_course_visibility' => [
         'classname'   => 'local_rsync_course',
         'methodname'  => 'change_course_visibility',
         'classpath'   => 'local/rsync/course.php',
         'description' => 'Allows you to set the visibility of a course',
         'type'        => 'write',
-    ),
-    'local_rsync_copy_course' => array(
+    ],
+    'local_rsync_copy_course' => [
         'classname'   => 'local_rsync_course',
         'methodname'  => 'copy_course',
         'classpath'   => 'local/rsync/course.php',
         'description' => 'Allows you to copy a course to an other. The data in the new course will be overwritten',
         'type'        => 'write',
-    )
-);
+    ],
+];
 
 // We define the services to install as pre-build services. A pre-build service is not editable by administrator.
-$services = array(
-    'rsync functionalities' => array(
-        'functions' => array ('local_rsync_create_file_resource', 'local_rsync_set_section_visibility',
+$services = [
+    'rsync functionalities' => [
+        'functions' => ['local_rsync_create_file_resource', 'local_rsync_set_section_visibility',
             'local_rsync_remove_file_from_section', 'local_rsync_rename_section', 'local_rsync_remove_section',
             'local_rsync_set_file_visibility', 'local_rsync_remove_all_files_from_section', 'local_rsync_change_course_visibility',
             'local_rsync_move_file_to_other_section', 'local_rsync_move_all_modules_to_other_section', 'local_rsync_copy_course',
             'local_rsync_remove_all_sections', 'local_rsync_copy_module', 'local_rsync_create_section',
-            'local_rsync_copy_all_section_modules'),
+            'local_rsync_copy_all_section_modules', ],
         'restrictedusers' => 0,
         'enabled' => 1,
-    )
-);
+    ],
+];

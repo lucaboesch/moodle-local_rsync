@@ -46,9 +46,9 @@ class local_rsync_course extends external_api {
      */
     public static function change_course_visibility_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
-                  'visibility' => new external_value(PARAM_INT, 'Visibility to set the course', VALUE_REQUIRED)
-            )
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+                  'visibility' => new external_value(PARAM_INT, 'Visibility to set the course', VALUE_REQUIRED),
+            ]
         );
     }
 
@@ -58,9 +58,9 @@ class local_rsync_course extends external_api {
      */
     public static function copy_course_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
-                  'newcourseid' => new external_value(PARAM_INT, 'The id of the new course', VALUE_REQUIRED)
-            )
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+                  'newcourseid' => new external_value(PARAM_INT, 'The id of the new course', VALUE_REQUIRED),
+            ]
         );
     }
 
@@ -75,8 +75,8 @@ class local_rsync_course extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::change_course_visibility_parameters(),
-        array('courseid' => $courseid,
-            'visibility' => $visibility));
+        ['courseid' => $courseid,
+            'visibility' => $visibility, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -107,8 +107,8 @@ class local_rsync_course extends external_api {
 
         course_change_visibility($courseid, $visibilityboolean);
 
-        return get_string('successmessage_course_visibility', 'local_rsync', array('visibility' => $visibilitytext,
-            'courseid' => $courseid, 'username' => fullname($USER)));
+        return get_string('successmessage_course_visibility', 'local_rsync', ['visibility' => $visibilitytext,
+            'courseid' => $courseid, 'username' => fullname($USER), ]);
     }
 
     /**
@@ -122,8 +122,8 @@ class local_rsync_course extends external_api {
         global $USER, $DB, $CFG;
 
         $params = self::validate_parameters(self::copy_course_parameters(),
-        array('courseid' => $courseid,
-            'newcourseid' => $newcourseid));
+        ['courseid' => $courseid,
+            'newcourseid' => $newcourseid, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -143,7 +143,7 @@ class local_rsync_course extends external_api {
         }
 
         // Backup.
-        $course = $DB->get_record('course', array('id' => $courseid));
+        $course = $DB->get_record('course', ['id' => $courseid]);
         $bc = new backup_controller(backup::TYPE_1COURSE, $course->id, backup::FORMAT_MOODLE, backup::INTERACTIVE_YES,
             backup::MODE_GENERAL, $USER->id);
 
@@ -190,8 +190,8 @@ class local_rsync_course extends external_api {
             throw new moodle_exception($e->getMessage());
         }
 
-        return get_string('successmessage_course_copy', 'local_rsync', array('courseid' => $courseid,
-            'newcourseid' => $newcourseid, 'username' => fullname($USER)));
+        return get_string('successmessage_course_copy', 'local_rsync', ['courseid' => $courseid,
+            'newcourseid' => $newcourseid, 'username' => fullname($USER), ]);
     }
 
     /**

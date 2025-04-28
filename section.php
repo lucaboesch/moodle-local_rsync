@@ -41,10 +41,10 @@ class local_rsync_section extends external_api {
      */
     public static function set_section_visibilty_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted', VALUE_REQUIRED),
-                  'visibility' => new external_value(PARAM_INT, 'Visibility to set the section', VALUE_REQUIRED)
-            )
+                  'visibility' => new external_value(PARAM_INT, 'Visibility to set the section', VALUE_REQUIRED),
+            ]
         );
     }
 
@@ -54,10 +54,10 @@ class local_rsync_section extends external_api {
      */
     public static function remove_file_from_section_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted', VALUE_REQUIRED),
                   'filename' => new external_value(PARAM_TEXT, 'The name of the file that should be deleted', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -67,10 +67,10 @@ class local_rsync_section extends external_api {
      */
     public static function rename_section_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted', VALUE_REQUIRED),
                   'sectionname' => new external_value(PARAM_TEXT, 'The new name of the section', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -80,9 +80,9 @@ class local_rsync_section extends external_api {
      */
     public static function remove_section_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -92,11 +92,11 @@ class local_rsync_section extends external_api {
      */
     public static function set_file_visibility_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted', VALUE_REQUIRED),
                   'filename' => new external_value(PARAM_TEXT, 'The name of the file', VALUE_REQUIRED),
                   'visibility' => new external_value(PARAM_INT, 'The state of visibility to set the file in', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -106,9 +106,9 @@ class local_rsync_section extends external_api {
      */
     public static function remove_all_files_from_section_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -118,12 +118,12 @@ class local_rsync_section extends external_api {
      */
     public static function move_file_to_other_section_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted', VALUE_REQUIRED),
                   'targetsectionnumber' => new external_value(PARAM_INT, 'In which section the files should be deleted',
                       VALUE_REQUIRED),
                   'modulename' => new external_value(PARAM_TEXT, 'In which section the files should be deleted', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -133,12 +133,12 @@ class local_rsync_section extends external_api {
      */
     public static function move_all_modules_to_other_section_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the modules should be deleted',
                       VALUE_REQUIRED),
                   'targetsectionnumber' => new external_value(PARAM_INT, 'In which section the modules should be moved to',
                       VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -148,8 +148,8 @@ class local_rsync_section extends external_api {
      */
     public static function remove_all_sections_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
-            )
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ]
         );
     }
 
@@ -159,14 +159,14 @@ class local_rsync_section extends external_api {
      */
     public static function copy_module_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'In which section the modules should be deleted',
                             VALUE_REQUIRED),
                   'targetsectionnumber' => new external_value(PARAM_INT, 'In which section the modules should be copied to',
                       VALUE_REQUIRED),
                   'modulename' => new external_value(PARAM_TEXT, 'Name of the module to be copied',
                       VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -176,9 +176,9 @@ class local_rsync_section extends external_api {
      */
     public static function create_section_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionname' => new external_value(PARAM_TEXT, 'The name of the new section', VALUE_REQUIRED),
-            )
+            ]
         );
     }
 
@@ -188,10 +188,10 @@ class local_rsync_section extends external_api {
      */
     public static function copy_all_section_modules_parameters() {
         return new external_function_parameters(
-            array('courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
+            ['courseid' => new external_value(PARAM_INT, 'The course id', VALUE_REQUIRED),
                   'sectionnumber' => new external_value(PARAM_INT, 'The id of the section', VALUE_REQUIRED),
                   'targetsectionnumber' => new external_value(PARAM_INT, 'The id of the target section', VALUE_REQUIRED),
-            )
+            ]
         );
     }
     /**
@@ -206,9 +206,9 @@ class local_rsync_section extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::set_section_visibilty_parameters(),
-            array('courseid' => $courseid,
+            ['courseid' => $courseid,
                 'sectionnumber' => $sectionnumber,
-                'visibility' => $visibility));
+                'visibility' => $visibility, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -238,8 +238,8 @@ class local_rsync_section extends external_api {
         }
 
         return get_string('successmessage_section_visibility', 'local_rsync',
-            array('visibility' => $visibilitytext, 'sectionnumber' => $sectionnumber, 'courseid' => $courseid,
-                'username' => fullname($USER)));
+            ['visibility' => $visibilitytext, 'sectionnumber' => $sectionnumber, 'courseid' => $courseid,
+                'username' => fullname($USER), ]);
     }
 
     /**
@@ -254,9 +254,9 @@ class local_rsync_section extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::remove_file_from_section_parameters(),
-            array('courseid' => $courseid,
+            ['courseid' => $courseid,
                 'sectionnumber' => $sectionnumber,
-                'filename' => $filename));
+                'filename' => $filename, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -275,7 +275,8 @@ class local_rsync_section extends external_api {
             throw new moodle_exception('cannotaddcoursemodule');
         }
 
-        $modules = get_array_of_activities($courseid);
+        $course = get_course($courseid);
+        $modules = course_modinfo::get_array_of_activities($course);
 
         foreach ($modules as $module) {
             if ($module->section == $sectionnumber && $module->name == $filename) {
@@ -283,8 +284,8 @@ class local_rsync_section extends external_api {
             }
         }
 
-        return get_string('successmessage_section_remove_file', 'local_rsync', array('filename' => $filename,
-            'sectionnumber' => $sectionnumber, 'courseid' => $courseid, 'username' => fullname($USER)));
+        return get_string('successmessage_section_remove_file', 'local_rsync', ['filename' => $filename,
+            'sectionnumber' => $sectionnumber, 'courseid' => $courseid, 'username' => fullname($USER), ]);
     }
 
     /**
@@ -300,9 +301,9 @@ class local_rsync_section extends external_api {
         global $USER, $DB;
 
         $params = self::validate_parameters(self::rename_section_parameters(),
-        array('courseid' => $courseid,
+        ['courseid' => $courseid,
             'sectionnumber' => $sectionnumber,
-            'sectionname' => $sectionname));
+            'sectionname' => $sectionname, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -321,12 +322,12 @@ class local_rsync_section extends external_api {
             throw new moodle_exception('cannotaddcoursemodule');
         }
 
-        if ($section = $DB->get_record("course_sections", array("course" => $courseid, "section" => $sectionnumber))) {
-            course_update_section($courseid, $section, array('name' => $sectionname));
+        if ($section = $DB->get_record("course_sections", ["course" => $courseid, "section" => $sectionnumber])) {
+            course_update_section($courseid, $section, ['name' => $sectionname]);
         }
 
-        return get_string('successmessage_section_rename', 'local_rsync', array('sectionnumber' => $sectionnumber,
-            'newsectionname' => $sectionname, 'courseid' => $courseid, 'username' => fullname($USER)));
+        return get_string('successmessage_section_rename', 'local_rsync', ['sectionnumber' => $sectionnumber,
+            'newsectionname' => $sectionname, 'courseid' => $courseid, 'username' => fullname($USER), ]);
     }
 
     /**
@@ -341,8 +342,8 @@ class local_rsync_section extends external_api {
         global $USER, $DB;
 
         $params = self::validate_parameters(self::remove_section_parameters(),
-        array('courseid' => $courseid,
-            'sectionnumber' => $sectionnumber));
+        ['courseid' => $courseid,
+            'sectionnumber' => $sectionnumber, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -363,16 +364,16 @@ class local_rsync_section extends external_api {
 
         $removed = false;
 
-        if ($section = $DB->get_record("course_sections", array("course" => $courseid, "section" => $sectionnumber))) {
+        if ($section = $DB->get_record("course_sections", ["course" => $courseid, "section" => $sectionnumber])) {
             $removed = course_delete_section($courseid, $section);
         }
 
         if ($removed) {
-            return get_string('successmessage_section_remove', 'local_rsync', array('sectionnumber' => $sectionnumber,
-                'courseid' => $courseid, 'username' => fullname($USER)));
+            return get_string('successmessage_section_remove', 'local_rsync', ['sectionnumber' => $sectionnumber,
+                'courseid' => $courseid, 'username' => fullname($USER), ]);
         } else {
-            return get_string('errormessage_section_rename', 'local_rsync', array('sectionnumber' => $sectionnumber,
-                'courseid' => $courseid, 'username' => fullname($USER)));
+            return get_string('errormessage_section_rename', 'local_rsync', ['sectionnumber' => $sectionnumber,
+                'courseid' => $courseid, 'username' => fullname($USER), ]);
         }
     }
 
@@ -387,8 +388,8 @@ class local_rsync_section extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::remove_section_parameters(),
-        array('courseid' => $courseid,
-            'sectionnumber' => $sectionnumber));
+        ['courseid' => $courseid,
+            'sectionnumber' => $sectionnumber, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -417,8 +418,8 @@ class local_rsync_section extends external_api {
                 throw new moodle_exception('removalfailed');
             }
         }
-        return get_string('successmessage_remove_all_sections', 'local_rsync', array('courseid' => $courseid,
-            'username' => fullname($USER)));
+        return get_string('successmessage_remove_all_sections', 'local_rsync', ['courseid' => $courseid,
+            'username' => fullname($USER), ]);
     }
 
     /**
@@ -435,10 +436,10 @@ class local_rsync_section extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::set_file_visibility_parameters(),
-        array('courseid' => $courseid,
+        ['courseid' => $courseid,
             'sectionnumber' => $sectionnumber,
             'filename' => $filename,
-            'visibility' => $visibility));
+            'visibility' => $visibility, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -457,7 +458,8 @@ class local_rsync_section extends external_api {
             throw new moodle_exception('cannotaddcoursemodule');
         }
 
-        $modules = get_array_of_activities($courseid);
+        $course = get_course($courseid);
+        $modules = course_modinfo::get_array_of_activities($course);
 
         $foundmodule = false;
 
@@ -477,12 +479,12 @@ class local_rsync_section extends external_api {
 
         if ($foundmodule) {
             return get_string('successmessage_section_file_visibility', 'local_rsync',
-                array('visibility' => $visibilitytext, 'filename' => $filename, 'sectionnumber' => $sectionnumber,
-                    'courseid' => $courseid, 'username' => fullname($USER)));
+                ['visibility' => $visibilitytext, 'filename' => $filename, 'sectionnumber' => $sectionnumber,
+                    'courseid' => $courseid, 'username' => fullname($USER), ]);
         } else {
             return get_string('errormessage_section_file_visibility', 'local_rsync',
-                array('filename' => $filename, 'sectionnumber' => $sectionnumber, 'courseid' => $courseid,
-                    'username' => fullname($USER)));
+                ['filename' => $filename, 'sectionnumber' => $sectionnumber, 'courseid' => $courseid,
+                    'username' => fullname($USER), ]);
         }
     }
 
@@ -498,8 +500,8 @@ class local_rsync_section extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::remove_all_files_from_section_parameters(),
-        array('courseid' => $courseid,
-            'sectionnumber' => $sectionnumber));
+        ['courseid' => $courseid,
+            'sectionnumber' => $sectionnumber, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -518,7 +520,8 @@ class local_rsync_section extends external_api {
             throw new moodle_exception('cannotaddcoursemodule');
         }
 
-        $modules = get_array_of_activities($courseid);
+        $course = get_course($courseid);
+        $modules = course_modinfo::get_array_of_activities($course);
 
         foreach ($modules as $module) {
             if ($module->section == $sectionnumber) {
@@ -527,7 +530,7 @@ class local_rsync_section extends external_api {
         }
 
         return get_string('successmessage_section_file_removal', 'local_rsync',
-            array('sectionnumber' => $sectionnumber, 'courseid' => $courseid, 'username' => fullname($USER)));
+            ['sectionnumber' => $sectionnumber, 'courseid' => $courseid, 'username' => fullname($USER)]);
     }
 
     /**
@@ -544,10 +547,10 @@ class local_rsync_section extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::move_file_to_other_section_parameters(),
-        array('courseid' => $courseid,
+        ['courseid' => $courseid,
         'sectionnumber' => $sectionnumber,
         'targetsectionnumber' => $targetsectionnumber,
-        'modulename' => $modulename));
+        'modulename' => $modulename, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -566,7 +569,8 @@ class local_rsync_section extends external_api {
             throw new moodle_exception('cannotaddcoursemodule');
         }
 
-        $modules = get_array_of_activities($courseid);
+        $course = get_course($courseid);
+        $modules = course_modinfo::get_array_of_activities($course);
 
         foreach ($modules as $module) {
             if ($module->section == $sectionnumber && $module->name == $modulename) {
@@ -579,8 +583,8 @@ class local_rsync_section extends external_api {
                 moveto_module($mod, $sectioninfo);
 
                 return get_string('successmessage_section_module_movement', 'local_rsync',
-                    array('modulename' => $modulename, 'sectionid' => $sectionnumber, 'targetsectionid' => $targetsectionnumber,
-                        'courseid' => $courseid, 'username' => fullname($USER)));
+                    ['modulename' => $modulename, 'sectionid' => $sectionnumber, 'targetsectionid' => $targetsectionnumber,
+                        'courseid' => $courseid, 'username' => fullname($USER), ]);
             }
         }
 
@@ -600,9 +604,9 @@ class local_rsync_section extends external_api {
         global $USER;
 
         $params = self::validate_parameters(self::move_all_modules_to_other_section_parameters(),
-        array('courseid' => $courseid,
+        ['courseid' => $courseid,
         'sectionnumber' => $sectionnumber,
-        'targetsectionnumber' => $targetsectionnumber));
+        'targetsectionnumber' => $targetsectionnumber, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -621,7 +625,8 @@ class local_rsync_section extends external_api {
             throw new moodle_exception('cannotaddcoursemodule');
         }
 
-        $modules = get_array_of_activities($courseid);
+        $course = get_course($courseid);
+        $modules = course_modinfo::get_array_of_activities($course);
 
         foreach ($modules as $module) {
             if ($module->section == $sectionnumber) {
@@ -633,8 +638,8 @@ class local_rsync_section extends external_api {
         }
 
         return get_string('successmessage_section_all_module_movement', 'local_rsync',
-            array('sectionid' => $sectionnumber, 'targetsectionid' => $targetsectionnumber, 'courseid' => $courseid,
-                'username' => fullname($USER)));
+            ['sectionid' => $sectionnumber, 'targetsectionid' => $targetsectionnumber, 'courseid' => $courseid,
+                'username' => fullname($USER), ]);
     }
 
     /**
@@ -653,8 +658,8 @@ class local_rsync_section extends external_api {
 
         // Check parameters.
         $params = self::validate_parameters(self::copy_module_parameters(),
-        array('courseid' => $courseid, 'sectionnumber' => $sectionnumber,
-              'targetsectionnumber' => $targetsectionnumber, 'modulename' => $modulename));
+        ['courseid' => $courseid, 'sectionnumber' => $sectionnumber,
+              'targetsectionnumber' => $targetsectionnumber, 'modulename' => $modulename, ]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -673,13 +678,14 @@ class local_rsync_section extends external_api {
             throw new moodle_exception('cannotaddcoursemodule');
         }
 
-        $course = $DB->get_record('course', array('id' => $courseid));
+        $course = $DB->get_record('course', ['id' => $courseid]);
         if ($course == null) {
             throw new moodle_exception('coursenotfound');
         }
 
         // Get all modules of course.
-        $modules = get_array_of_activities($courseid);
+        $course = get_course($courseid);
+        $modules = course_modinfo::get_array_of_activities($course);
 
         // Loop through them.
         foreach ($modules as $module) {
@@ -737,9 +743,9 @@ class local_rsync_section extends external_api {
 
         // Return the success message.
         return get_string('successmessage_copy_module', 'local_rsync',
-            array('modulename' => $modulename, 'section' => $sectionnumber,
+            ['modulename' => $modulename, 'section' => $sectionnumber,
                   'targetsection' => $targetsectionnumber, 'courseid' => $courseid,
-                  'username' => fullname($USER)));
+                  'username' => fullname($USER), ]);
     }
 
     /**
@@ -755,7 +761,7 @@ class local_rsync_section extends external_api {
 
         // Check parameters.
         $params = self::validate_parameters(self::create_section_parameters(),
-        array('courseid' => $courseid, 'sectionname' => $sectionname));
+        ['courseid' => $courseid, 'sectionname' => $sectionname]);
 
         // Context validation.
         $context = \context_user::instance($USER->id);
@@ -770,12 +776,12 @@ class local_rsync_section extends external_api {
         $section = course_create_section($courseid);
 
         // Rename section.
-        course_update_section($courseid, $section, array('name' => $sectionname));
+        course_update_section($courseid, $section, ['name' => $sectionname]);
 
          // Return the success message.
          return get_string('successmessage_create_section', 'local_rsync',
-         array('sectionname' => $sectionname, 'sectionnumber' => $section->section,
-               'courseid' => $courseid, 'username' => fullname($USER)));
+         ['sectionname' => $sectionname, 'sectionnumber' => $section->section,
+               'courseid' => $courseid, 'username' => fullname($USER), ]);
     }
 
     /**
@@ -792,16 +798,17 @@ class local_rsync_section extends external_api {
 
         // Check parameters.
         $params = self::validate_parameters(self::copy_all_section_modules_parameters(),
-        array('courseid' => $courseid, 'sectionnumber' => $sectionnumber, 'targetsectionnumber' => $targetsectionnumber));
+        ['courseid' => $courseid, 'sectionnumber' => $sectionnumber, 'targetsectionnumber' => $targetsectionnumber]);
 
         // Check if the course is found. If not, throw exception.
-        $course = $DB->get_record('course', array('id' => $courseid));
+        $course = $DB->get_record('course', ['id' => $courseid]);
         if ($course == null) {
             throw new moodle_exception('coursenotfound');
         }
 
         // Get all modules of course.
-        $modules = get_array_of_activities($courseid);
+        $course = get_course($courseid);
+        $modules = course_modinfo::get_array_of_activities($course);
 
         // Loop through them.
         foreach ($modules as $module) {
@@ -858,8 +865,8 @@ class local_rsync_section extends external_api {
 
         // Return the success message.
         return get_string('successmessage_copy_all_section_modules', 'local_rsync',
-        array('sectionnumber' => $sectionnumber, 'targetsectionnumber' => $targetsectionnumber,
-              'courseid' => $courseid, 'username' => fullname($USER)));
+        ['sectionnumber' => $sectionnumber, 'targetsectionnumber' => $targetsectionnumber,
+              'courseid' => $courseid, 'username' => fullname($USER), ]);
     }
 
     /**
