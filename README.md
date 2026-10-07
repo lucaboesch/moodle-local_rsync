@@ -1,6 +1,6 @@
 # Moodle Rsync
 
-[![Moodle Plugin CI](https://github.com/lucaboesch/Moodle_Rsync/actions/workflows/moodle-plugin-ci.yml/badge.svg?branch=main)](https://github.com/lucaboesch/Moodle_Rsync/actions/workflows/moodle-plugin-ci.yml)
+[![Moodle Plugin CI](https://github.com/lucaboesch/moodle-local_rsync/actions/workflows/moodle-plugin-ci.yml/badge.svg?branch=main)](https://github.com/lucaboesch/moodle-local_rsync/actions/workflows/moodle-plugin-ci.yml)
 
 This Plugin was developed as a part of the course Project 1 at [BFH](https://www.bfh.ch/de/).
 It was made with the intention to help teachers with their file and course management.
